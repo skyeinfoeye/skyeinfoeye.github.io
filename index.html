@@ -1,15 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<meta charset="UTF-8">
-<title>可爱萌</title>
-<link rel="icon" href="http://p2zl7fc12.bkt.clouddn.com/bx.ico" type="image/x-icon"/>
-<embed src="http://p2zl7fc12.bkt.clouddn.com/little-lucky.mp3" hidden="true" autostart="true" loop="true">
+<head>
+    <meta charset="UTF-8">
+    <title>可爱萌</title>
+    <link rel="icon" href="http://p2zl7fc12.bkt.clouddn.com/bx.ico" type="image/x-icon"/>
 </head>
 <body>
 <div style="text-align: center">
+    <audio id="musicBox" src="http://p2zl7fc12.bkt.clouddn.com/little-lucky.mp3" autoplay preload loop="loop"></audio>
     <span style="font-size: large;font-weight: bold">I Love You.</span>
     <br>
     <span style="margin-left: 100px">---大凯凯同学</span>
 </div>
 </body>
+<script type="text/javascript">
+    audioAutoPlay('musicBox');
+    function audioAutoPlay(id){
+        var audio = document.getElementById(id),
+            play = function(){
+                audio.play();
+                document.removeEventListener("touchstart", play, false);
+            };
+        audio.play();
+
+        document.addEventListener("WeixinJSBridgeReady", function () {
+            play();
+        }, false);
+
+        document.addEventListener('YixinJSBridgeReady', function() {
+            play();
+        }, false);
+
+        document.addEventListener("touchstart",play, false);
+    }
+</script>
 </html>
