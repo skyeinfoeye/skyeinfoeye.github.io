@@ -33,7 +33,7 @@
             </div>
         </div>
         <div id="clock-box">
-            <span class="STYLE1"></span><font color="#33CC00">可爱萌，现在是我们在一起的</font>
+            <span class="STYLE1"></span><font color="#33CC00" id="timeline" onclick="toTimeLine()">可爱萌，现在是我们在一起的</font>
             <div id="clock"></div>
         </div>
         <canvas id="canvas" width="1100" height="680"></canvas>
@@ -46,6 +46,10 @@
 
 <script type="text/javascript">
     audioAutoPlay('musicBox');
+    function toTimeLine() {
+        window.location.href="./timeline.html";
+    }
+    
     function audioAutoPlay(id){
         var audio = document.getElementById(id),
             play = function(){
