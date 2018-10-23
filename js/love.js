@@ -169,11 +169,8 @@
             ctx.moveTo(0, 0);
             ctx.scale(0.75, 0.75);
             ctx.font = "12px 微软雅黑,Verdana"; // 字号肿么没有用? (ˉ(∞)ˉ)
-<<<<<<< HEAD
-            ctx.fillText("Come Baby", 23, 10);
-=======
+
             ctx.fillText("I love you.", 23, 10);
->>>>>>> 80fa1788e31ce9264b7e835e61d2f02a23e8f5f0
             ctx.restore();
         },
         clear: function() {
