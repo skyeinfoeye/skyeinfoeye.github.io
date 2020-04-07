@@ -40,7 +40,7 @@ $(window).resize(function() {
 function timeElapse(date){
 	var current = Date();
 	
-  	current.setFullYear(2020, 2, 7);
+  	current.setFullYear(2020,2,7);
   	current.setHours(0);
   	current.setMinutes(0);
   	current.setSeconds(0);
