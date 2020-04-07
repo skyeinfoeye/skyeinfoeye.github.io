@@ -18,7 +18,6 @@
 </head>
 <body>
 <div id="main">
-    <audio id="musicBox" src="http://sc1.111ttt.cn/2015/1/07/11/100112240509.mp3" autoplay preload loop="loop"></audio>
     <div id="wrap">
         <div id="text">
             <div id="code"> 
@@ -29,11 +28,15 @@
                     <br>
                     <span class="say"><span class="space"></span> -- 大凯凯同学</span> 
                     <br>
+                    <br>
+                    <br>
+                    <span class="say"></span>对不起，没能陪你走到最后。照顾好自己。</span> 
+                    <br>
                 </font>
             </div>
         </div>
         <div id="clock-box">
-            <span class="STYLE1"></span><font color="#33CC00" id="timeline" onclick="toTimeLine()">可爱萌，现在是我们在一起的</font>
+            <span class="STYLE1"></span><font color="#33CC00" id="timeline" onclick="toTimeLine()">可爱萌，我们在一起</font>
             <div id="clock"></div>
         </div>
         <canvas id="canvas" width="1100" height="680"></canvas>
@@ -45,34 +48,19 @@
 </script>
 
 <script type="text/javascript">
-    audioAutoPlay('musicBox');
-
     function toTimeLine() {
         window.location.href="./timeline.html";
     }
-    function audioAutoPlay(id){
-        var audio = document.getElementById(id),
-            play = function(){
-                audio.play();
-                document.removeEventListener("touchstart", play, false);
-            };
-        audio.play();
-        document.addEventListener("WeixinJSBridgeReady", function () {
-            play();
-        }, false);
-        document.addEventListener('YixinJSBridgeReady', function() {
-            play();
-        }, false);
-        document.addEventListener("touchstart",play, false);
-    }
+    
     (function(){
         var canvas = $('#canvas');
 
         if (!canvas[0].getContext) {
             $("#error").show();
-            return false;        }
+            return false;        
+        }
 
-        var width = canvas.width();
+        var width  = canvas.width();
         var height = canvas.height();
         canvas.attr("width", width);
         canvas.attr("height", height);
