@@ -33,8 +33,7 @@ $(window).resize(function() {
 })(jQuery);
 
 function timeElapse(date){
-	var endDate = '2020/03/07 00:00:00';
-	var current = Date(Date.parse(endDate));
+	var current = new Date(2020,2,7,0,0,0,0);
 
 	var seconds = (Date.parse(current) - Date.parse(date)) / 1000;
 	var days = Math.floor(seconds / (3600 * 24));
